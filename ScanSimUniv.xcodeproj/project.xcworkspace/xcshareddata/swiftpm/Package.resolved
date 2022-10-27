@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "compactslider",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/buh/CompactSlider.git",
+      "state" : {
+        "revision" : "ad22626210f03b25326f99249a67eef705447adf",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "debouncedonchange",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tunous/DebouncedOnChange.git",
+      "state" : {
+        "revision" : "27070b63575c06ba91678a026459c528c18d0cb1",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "defaults",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/Defaults",
+      "state" : {
+        "revision" : "119f654d44f7b90f00dc11f7dd1c94a36f12576b",
+        "version" : "6.2.1"
+      }
+    },
+    {
+      "identity" : "filepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/markrenaud/FilePicker",
+      "state" : {
+        "revision" : "720f8cb5ca0c0efc982ed381afc84ba3e8b3214e",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "pdfviewer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rajubd49/PDFViewer.git",
+      "state" : {
+        "revision" : "d228974c60fe723ad98b690611973184a934ad72",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}

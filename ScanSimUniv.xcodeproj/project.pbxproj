@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8B0244928FEFA440099199D /* FilePicker in Frameworks */ = {isa = PBXBuildFile; productRef = F8B0244828FEFA440099199D /* FilePicker */; };
+		F8C17A6428FECC4C009A9CDA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = F8C17A6328FECC4C009A9CDA /* Defaults */; };
+		F8C17A6628FECD91009A9CDA /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C17A6528FECD91009A9CDA /* PreviewView.swift */; };
+		F8C17A6928FECDB9009A9CDA /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = F8C17A6828FECDB9009A9CDA /* CompactSlider */; };
+		F8C17A6B28FECED8009A9CDA /* letter.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F8C17A6A28FECED8009A9CDA /* letter.pdf */; };
+		F8DE523728FC93F30007B402 /* ScanSimUnivApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE523628FC93F30007B402 /* ScanSimUnivApp.swift */; };
+		F8DE523928FC93F30007B402 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE523828FC93F30007B402 /* ContentView.swift */; };
+		F8DE523B28FC93F40007B402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DE523A28FC93F40007B402 /* Assets.xcassets */; };
+		F8DE523F28FC93F40007B402 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8DE523E28FC93F40007B402 /* Preview Assets.xcassets */; };
+		F8DE524928FC93F40007B402 /* ScanSimUnivTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE524828FC93F40007B402 /* ScanSimUnivTests.swift */; };
+		F8DE525328FC93F50007B402 /* ScanSimUnivUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE525228FC93F50007B402 /* ScanSimUnivUITests.swift */; };
+		F8DE525528FC93F50007B402 /* ScanSimUnivUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE525428FC93F50007B402 /* ScanSimUnivUITestsLaunchTests.swift */; };
+		F8DE526228FCA3BF0007B402 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DE526128FCA3BF0007B402 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8DE524528FC93F40007B402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8DE522B28FC93F30007B402 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8DE523228FC93F30007B402;
+			remoteInfo = ScanSimUniv;
+		};
+		F8DE524F28FC93F50007B402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8DE522B28FC93F30007B402 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8DE523228FC93F30007B402;
+			remoteInfo = ScanSimUniv;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8C17A6528FECD91009A9CDA /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		F8C17A6A28FECED8009A9CDA /* letter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = letter.pdf; sourceTree = "<group>"; };
+		F8C17A6C28FED0B4009A9CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F8DE523328FC93F30007B402 /* ScanSimUniv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanSimUniv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DE523628FC93F30007B402 /* ScanSimUnivApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSimUnivApp.swift; sourceTree = "<group>"; };
+		F8DE523828FC93F30007B402 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8DE523A28FC93F40007B402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8DE523C28FC93F40007B402 /* ScanSimUniv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScanSimUniv.entitlements; sourceTree = "<group>"; };
+		F8DE523E28FC93F40007B402 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8DE524428FC93F40007B402 /* ScanSimUnivTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScanSimUnivTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DE524828FC93F40007B402 /* ScanSimUnivTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSimUnivTests.swift; sourceTree = "<group>"; };
+		F8DE524E28FC93F50007B402 /* ScanSimUnivUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScanSimUnivUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DE525228FC93F50007B402 /* ScanSimUnivUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSimUnivUITests.swift; sourceTree = "<group>"; };
+		F8DE525428FC93F50007B402 /* ScanSimUnivUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSimUnivUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8DE526128FCA3BF0007B402 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8DE523028FC93F30007B402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B0244928FEFA440099199D /* FilePicker in Frameworks */,
+				F8C17A6428FECC4C009A9CDA /* Defaults in Frameworks */,
+				F8C17A6928FECDB9009A9CDA /* CompactSlider in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524128FC93F40007B402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524B28FC93F50007B402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8A3DEA328FEC8B500C36BB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8DE522A28FC93F30007B402 = {
+			isa = PBXGroup;
+			children = (
+				F8DE523528FC93F30007B402 /* ScanSimUniv */,
+				F8DE524728FC93F40007B402 /* ScanSimUnivTests */,
+				F8DE525128FC93F50007B402 /* ScanSimUnivUITests */,
+				F8DE523428FC93F30007B402 /* Products */,
+				F8A3DEA328FEC8B500C36BB1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F8DE523428FC93F30007B402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE523328FC93F30007B402 /* ScanSimUniv.app */,
+				F8DE524428FC93F40007B402 /* ScanSimUnivTests.xctest */,
+				F8DE524E28FC93F50007B402 /* ScanSimUnivUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8DE523528FC93F30007B402 /* ScanSimUniv */ = {
+			isa = PBXGroup;
+			children = (
+				F8C17A6C28FED0B4009A9CDA /* Info.plist */,
+				F8C17A6528FECD91009A9CDA /* PreviewView.swift */,
+				F8DE523628FC93F30007B402 /* ScanSimUnivApp.swift */,
+				F8DE526128FCA3BF0007B402 /* SettingsView.swift */,
+				F8C17A6A28FECED8009A9CDA /* letter.pdf */,
+				F8DE523828FC93F30007B402 /* ContentView.swift */,
+				F8DE523A28FC93F40007B402 /* Assets.xcassets */,
+				F8DE523C28FC93F40007B402 /* ScanSimUniv.entitlements */,
+				F8DE523D28FC93F40007B402 /* Preview Content */,
+			);
+			path = ScanSimUniv;
+			sourceTree = "<group>";
+		};
+		F8DE523D28FC93F40007B402 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE523E28FC93F40007B402 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8DE524728FC93F40007B402 /* ScanSimUnivTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE524828FC93F40007B402 /* ScanSimUnivTests.swift */,
+			);
+			path = ScanSimUnivTests;
+			sourceTree = "<group>";
+		};
+		F8DE525128FC93F50007B402 /* ScanSimUnivUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F8DE525228FC93F50007B402 /* ScanSimUnivUITests.swift */,
+				F8DE525428FC93F50007B402 /* ScanSimUnivUITestsLaunchTests.swift */,
+			);
+			path = ScanSimUnivUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8DE523228FC93F30007B402 /* ScanSimUniv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8DE525828FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUniv" */;
+			buildPhases = (
+				F8DE522F28FC93F30007B402 /* Sources */,
+				F8DE523028FC93F30007B402 /* Frameworks */,
+				F8DE523128FC93F30007B402 /* Resources */,
+				F889F4D62902793800DCE4F6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScanSimUniv;
+			packageProductDependencies = (
+				F8C17A6328FECC4C009A9CDA /* Defaults */,
+				F8C17A6828FECDB9009A9CDA /* CompactSlider */,
+				F8B0244828FEFA440099199D /* FilePicker */,
+			);
+			productName = ScanSimUniv;
+			productReference = F8DE523328FC93F30007B402 /* ScanSimUniv.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8DE524328FC93F40007B402 /* ScanSimUnivTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8DE525B28FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUnivTests" */;
+			buildPhases = (
+				F8DE524028FC93F40007B402 /* Sources */,
+				F8DE524128FC93F40007B402 /* Frameworks */,
+				F8DE524228FC93F40007B402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8DE524628FC93F40007B402 /* PBXTargetDependency */,
+			);
+			name = ScanSimUnivTests;
+			productName = ScanSimUnivTests;
+			productReference = F8DE524428FC93F40007B402 /* ScanSimUnivTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8DE524D28FC93F50007B402 /* ScanSimUnivUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8DE525E28FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUnivUITests" */;
+			buildPhases = (
+				F8DE524A28FC93F50007B402 /* Sources */,
+				F8DE524B28FC93F50007B402 /* Frameworks */,
+				F8DE524C28FC93F50007B402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8DE525028FC93F50007B402 /* PBXTargetDependency */,
+			);
+			name = ScanSimUnivUITests;
+			productName = ScanSimUnivUITests;
+			productReference = F8DE524E28FC93F50007B402 /* ScanSimUnivUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8DE522B28FC93F30007B402 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F8DE523228FC93F30007B402 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					F8DE524328FC93F40007B402 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = F8DE523228FC93F30007B402;
+					};
+					F8DE524D28FC93F50007B402 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = F8DE523228FC93F30007B402;
+					};
+				};
+			};
+			buildConfigurationList = F8DE522E28FC93F30007B402 /* Build configuration list for PBXProject "ScanSimUniv" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8DE522A28FC93F30007B402;
+			packageReferences = (
+				F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */,
+				F8C17A6728FECDB9009A9CDA /* XCRemoteSwiftPackageReference "CompactSlider" */,
+				F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */,
+				F889F4D32901723400DCE4F6 /* XCRemoteSwiftPackageReference "DebouncedOnChange" */,
+				F889F4D72906FB7A00DCE4F6 /* XCRemoteSwiftPackageReference "PDFViewer" */,
+			);
+			productRefGroup = F8DE523428FC93F30007B402 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8DE523228FC93F30007B402 /* ScanSimUniv */,
+				F8DE524328FC93F40007B402 /* ScanSimUnivTests */,
+				F8DE524D28FC93F50007B402 /* ScanSimUnivUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8DE523128FC93F30007B402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DE523F28FC93F40007B402 /* Preview Assets.xcassets in Resources */,
+				F8C17A6B28FECED8009A9CDA /* letter.pdf in Resources */,
+				F8DE523B28FC93F40007B402 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524228FC93F40007B402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524C28FC93F50007B402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F889F4D62902793800DCE4F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8DE522F28FC93F30007B402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DE526228FCA3BF0007B402 /* SettingsView.swift in Sources */,
+				F8C17A6628FECD91009A9CDA /* PreviewView.swift in Sources */,
+				F8DE523928FC93F30007B402 /* ContentView.swift in Sources */,
+				F8DE523728FC93F30007B402 /* ScanSimUnivApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524028FC93F40007B402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DE524928FC93F40007B402 /* ScanSimUnivTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DE524A28FC93F50007B402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8DE525328FC93F50007B402 /* ScanSimUnivUITests.swift in Sources */,
+				F8DE525528FC93F50007B402 /* ScanSimUnivUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8DE524628FC93F40007B402 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8DE523228FC93F30007B402 /* ScanSimUniv */;
+			targetProxy = F8DE524528FC93F40007B402 /* PBXContainerItemProxy */;
+		};
+		F8DE525028FC93F50007B402 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8DE523228FC93F30007B402 /* ScanSimUniv */;
+			targetProxy = F8DE524F28FC93F50007B402 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F8DE525628FC93F50007B402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8DE525728FC93F50007B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F8DE525928FC93F50007B402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScanSimUniv/ScanSimUniv.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScanSimUniv/Preview Content\"";
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanSimUniv/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUniv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8DE525A28FC93F50007B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScanSimUniv/ScanSimUniv.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScanSimUniv/Preview Content\"";
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanSimUniv/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUniv;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F8DE525C28FC93F50007B402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUnivTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanSimUniv.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScanSimUniv";
+			};
+			name = Debug;
+		};
+		F8DE525D28FC93F50007B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUnivTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanSimUniv.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScanSimUniv";
+			};
+			name = Release;
+		};
+		F8DE525F28FC93F50007B402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUnivUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScanSimUniv;
+			};
+			name = Debug;
+		};
+		F8DE526028FC93F50007B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DX96FWY9AX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUnivUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ScanSimUniv;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8DE522E28FC93F30007B402 /* Build configuration list for PBXProject "ScanSimUniv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8DE525628FC93F50007B402 /* Debug */,
+				F8DE525728FC93F50007B402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8DE525828FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUniv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8DE525928FC93F50007B402 /* Debug */,
+				F8DE525A28FC93F50007B402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8DE525B28FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUnivTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8DE525C28FC93F50007B402 /* Debug */,
+				F8DE525D28FC93F50007B402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8DE525E28FC93F50007B402 /* Build configuration list for PBXNativeTarget "ScanSimUnivUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8DE525F28FC93F50007B402 /* Debug */,
+				F8DE526028FC93F50007B402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F889F4D32901723400DCE4F6 /* XCRemoteSwiftPackageReference "DebouncedOnChange" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Tunous/DebouncedOnChange.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F889F4D72906FB7A00DCE4F6 /* XCRemoteSwiftPackageReference "PDFViewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rajubd49/PDFViewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markrenaud/FilePicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.1;
+			};
+		};
+		F8C17A6728FECDB9009A9CDA /* XCRemoteSwiftPackageReference "CompactSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/buh/CompactSlider.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8B0244828FEFA440099199D /* FilePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */;
+			productName = FilePicker;
+		};
+		F8C17A6328FECC4C009A9CDA /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		F8C17A6828FECDB9009A9CDA /* CompactSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8C17A6728FECDB9009A9CDA /* XCRemoteSwiftPackageReference "CompactSlider" */;
+			productName = CompactSlider;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F8DE522B28FC93F30007B402 /* Project object */;
+}
