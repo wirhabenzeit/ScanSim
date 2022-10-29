@@ -6,7 +6,6 @@
 //
 
 import Defaults
-import FilePicker
 import PDFKit
 import SwiftUI
 
@@ -39,6 +38,7 @@ struct ContentView: View {
   @Default(.appSettings) var appSettings
   @StateObject var scanner = Scanner()
   @State var sheet = false
+  @State private var filePicker = false
   var body: some View {
     #if os(iOS)
       if platform == .iOS {
@@ -53,23 +53,16 @@ struct ContentView: View {
           .onChange(of: settings) { _ in
             Task { try await scanner.scan() }
           }
-
           NavigationView {
             PreviewView(controller: scanner)
               .navigationTitle("Scan Preview")
-              .navigationBarItems(trailing:
-                HStack {
-                  Button(action: {
-                    scanner.write()
-                    sheet = true
-                  }, label: {
-                    Image(systemName: "square.and.arrow.up")
-                  }).disabled(scanner.outputPdf==nil)
+              .toolbar {
+                if scanner.outputPdf != nil {
+                  ToolbarItem(placement: .navigationBarTrailing) {
+                    ShareLink(item: scanner.outputPdf!, preview: SharePreview(scanner.fileName()+".pdf", image: scanner.thumbnail()))
+                  }
                 }
-                .sheet(isPresented: $sheet, content: {
-                  ShareSheetView(activityItems: [scanner.outUrl])
-                })
-              )
+              }
           }
           .tabItem {
             Label("Preview", systemImage: "square.and.pencil")
@@ -84,26 +77,21 @@ struct ContentView: View {
             }
           PreviewView(controller: scanner)
             .navigationTitle("Scan Simulator")
-            .toolbar {
+            .toolbar(content: {
               ToolbarItem(placement: .navigationBarLeading) {
-                FilePicker(types: [.pdf], allowMultiple: false) { urls in
-                  Task { try await scanner.load(url: urls.first!) }
-                }
-              label: {
-                Text("Select PDF file")
-              }
-              }
-              ToolbarItem(placement: .automatic) {
                 Button(action: {
-                  scanner.write()
-                  sheet = true
-                }, label: {
-                  Image(systemName: "square.and.arrow.up")
-                }).disabled(scanner.outputPdf==nil)
+                  self.filePicker.toggle()
+                }) { Text("Select PDF file") }
               }
-            }
-            .sheet(isPresented: $sheet, content: {
-              ShareSheetView(activityItems: [scanner.outUrl])
+              if scanner.outputPdf != nil {
+                ToolbarItem(placement: .automatic, content: { ShareLink(item: scanner.outputPdf!, preview: SharePreview(scanner.fileName()+".pdf", image: scanner.thumbnail())) })
+              }
+            })
+            .fileImporter(isPresented: $filePicker, allowedContentTypes: [.pdf], allowsMultipleSelection: false, onCompletion: { (res) in
+              do {
+                let url = try res.get().first!
+                Task { try await scanner.load(url: url) }
+              } catch { print("Error") }
             })
         }
       }
@@ -118,23 +106,27 @@ struct ContentView: View {
           .navigationTitle("Scan Simulator")
           .toolbar {
             ToolbarItem(placement: .automatic) {
-              FilePicker(types: [.pdf], allowMultiple: false) { urls in
-                Task { try await scanner.load(url: urls.first!) }
-              }
-            label: {
-              Text("Select PDF file")
-            }
+              Button(action: {self.filePicker.toggle()}) { Text("Select PDF File") }
             }
             ToolbarItem(placement: .automatic) {
               Button(action: {
                        scanner.write()
-                if appSettings.showResult { NSWorkspace.shared.open(scanner.outUrl!) }
+                if appSettings.showResult { NSWorkspace.shared.open(scanner.outputPdf!.location()) }
                      },
                      label: {
-                      Image(systemName: "square.and.arrow.up")
-              }).disabled(scanner.outputPdf==nil)
+                       Image(systemName: "square.and.arrow.up")
+                     }).disabled(scanner.outputPdf == nil)
+            }
+            if scanner.outputPdf != nil {
+              ToolbarItem(placement: .automatic, content: { ShareLink(item: scanner.outputPdf!, preview: SharePreview(scanner.fileName()+".pdf", image: scanner.thumbnail())) })
             }
           }
+          .fileImporter(isPresented: $filePicker, allowedContentTypes: [.pdf], allowsMultipleSelection: false, onCompletion: { (res) in
+            do {
+              let url = try res.get().first!
+              Task { try await scanner.load(url: url) }
+            } catch { print("Error") }
+          })
       }.toolbar {
         ToolbarItem(placement: .navigation) {
           Button(action: toggleSidebar, label: {
@@ -152,6 +144,28 @@ struct ContentView: View {
   #endif
 }
 
+extension PDFDocumentURL: Transferable {
+  public static var transferRepresentation: some TransferRepresentation {
+    FileRepresentation(contentType: .pdf) {
+      $0.writeToLocation()
+      return SentTransferredFile($0.location())
+    } importing: { received in
+      return PDFDocumentURL.init(url: received.file)!
+    }
+  }
+  
+}
+
+class PDFDocumentURL: PDFDocument {
+  public var filename: String = ""
+  
+  func location() -> URL {
+    return Defaults[.appSettings].destinationFolder.url().appendingPathComponent(filename + Defaults[.appSettings].fileNameAddition + ".pdf")
+  }
+  func writeToLocation() {
+    self.write(to: self.location())
+  }
+}
 
 struct SidebarView: View {
   var body: some View {
@@ -162,73 +176,3 @@ struct SidebarView: View {
     }
   }
 }
-
-struct ScanSettingsView: View {
-  @Default(.scanSettings) var settings
-  var body: some View {
-    List {
-      Section(header: Text("Color Settings").font(.headline)) {
-        Toggle("Grayscale", isOn: $settings.grayscale).toggleStyle(SwitchToggleStyle())
-        Picker("Grayscale contrast", selection: $settings.grayscaleMode) {
-          Text("Low").tag(.tonal as GrayscaleMode)
-          Text("Medium").tag(.mono as GrayscaleMode)
-          Text("High").tag(.noir as GrayscaleMode)
-        }.disabled(settings.grayscale == false)
-        Picker("Color filter", selection: $settings.colorMode) {
-          Text("None").tag(.normal as ColorMode)
-          Text("Exaggerated").tag(.chrome as ColorMode)
-          Text("Diminished").tag(.fade as ColorMode)
-        }.disabled(settings.grayscale)
-      }
-      Section(header: Text("Quality Settings").font(.headline)) {
-        HStack {
-          Text("Output Resolution")
-          CompactSliderDelayed(value: $settings.dpi, in: 100 ... 450, label: "DPI", valueRenderer: { String(Int($0)) })
-        }
-        HStack {
-          Text("JPEG Quality")
-          CompactSliderDelayed(value: $settings.quality, in: 0 ... 100, label: "%", valueRenderer: { String(Int($0)) })
-        }
-      }
-      Section(header: Text("Effect Settings").font(.headline)) {
-        HStack {
-          Text("Dust   ")
-          CompactSliderDelayed(value: $settings.dustAmount, in: 0 ... 1, label: "", valueRenderer: { String(format: "%.2f", $0) })
-        }
-        HStack {
-          Text("Scratches")
-          CompactSliderDelayed(value: $settings.scratchAmount, in: 0 ... 1, label: "", valueRenderer: { String(format: "%.2f", $0) })
-        }
-        Picker("Blur Type", selection: $settings.blurType) {
-          Text("None").tag(.none as BlurType)
-          Text("Box").tag(.box as BlurType)
-          Text("Disc").tag(.disc as BlurType)
-          Text("Gaussian").tag(.gaussian as BlurType)
-        }
-        HStack {
-          Text("Blur radius")
-          CompactSliderDelayed(value: $settings.blurRadius, in: 0 ... 3, label: "r", valueRenderer: { String(format: "%.2f", $0) }).disabled(settings.blurType == .none)
-        }
-      }
-      Section(header: Text("Rotation Settings").font(.headline)) {
-        Picker("Rotation", selection: $settings.rotationType) {
-          Text("fixed").tag(.fixed as RotationType)
-          Text("random").tag(.random as RotationType)
-          Text("none").tag(.none as RotationType)
-        }
-        HStack {
-          Text("Rotation Amount").foregroundColor((settings.rotationType == .none) ? .gray : .black)
-          switch settings.rotationType {
-          case .fixed:
-            CompactSliderDelayed(value: $settings.rotationFixed, in: -3 ... 3, direction: .center, label: "°", valueRenderer: { String(format: "%.1f", $0) })
-          case .random:
-            CompactSliderDelayed(from: $settings.rotationRange[0], to: $settings.rotationRange[1], in: -3 ... 3, label: "°", valueRenderer: { String(format: "%.1f", $0) })
-          case .none:
-            CompactSliderDelayed(value: .constant(0.0), in: -3 ... 3, direction: .center, label: "°", valueRenderer: { String(format: "%.1f", $0) }).disabled(true)
-          }
-        }
-      }
-    }.frame(minWidth: 300)
-  }
-}
-

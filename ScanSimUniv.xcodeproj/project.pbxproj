@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8B0244928FEFA440099199D /* FilePicker in Frameworks */ = {isa = PBXBuildFile; productRef = F8B0244828FEFA440099199D /* FilePicker */; };
+		F802749E290AD40300F3C2F5 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802749D290AD40300F3C2F5 /* DefaultSettings.swift */; };
+		F80274A0290AD4DF00F3C2F5 /* ImageManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802749F290AD4DF00F3C2F5 /* ImageManipulation.swift */; };
 		F8C17A6428FECC4C009A9CDA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = F8C17A6328FECC4C009A9CDA /* Defaults */; };
 		F8C17A6628FECD91009A9CDA /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C17A6528FECD91009A9CDA /* PreviewView.swift */; };
 		F8C17A6928FECDB9009A9CDA /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = F8C17A6828FECDB9009A9CDA /* CompactSlider */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F802749D290AD40300F3C2F5 /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
+		F802749F290AD4DF00F3C2F5 /* ImageManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManipulation.swift; sourceTree = "<group>"; };
 		F8C17A6528FECD91009A9CDA /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		F8C17A6A28FECED8009A9CDA /* letter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = letter.pdf; sourceTree = "<group>"; };
 		F8C17A6C28FED0B4009A9CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B0244928FEFA440099199D /* FilePicker in Frameworks */,
 				F8C17A6428FECC4C009A9CDA /* Defaults in Frameworks */,
 				F8C17A6928FECDB9009A9CDA /* CompactSlider in Frameworks */,
 			);
@@ -95,6 +97,8 @@
 		F8DE522A28FC93F30007B402 = {
 			isa = PBXGroup;
 			children = (
+				F802749F290AD4DF00F3C2F5 /* ImageManipulation.swift */,
+				F802749D290AD40300F3C2F5 /* DefaultSettings.swift */,
 				F8DE523528FC93F30007B402 /* ScanSimUniv */,
 				F8DE524728FC93F40007B402 /* ScanSimUnivTests */,
 				F8DE525128FC93F50007B402 /* ScanSimUnivUITests */,
@@ -174,7 +178,6 @@
 			packageProductDependencies = (
 				F8C17A6328FECC4C009A9CDA /* Defaults */,
 				F8C17A6828FECDB9009A9CDA /* CompactSlider */,
-				F8B0244828FEFA440099199D /* FilePicker */,
 			);
 			productName = ScanSimUniv;
 			productReference = F8DE523328FC93F30007B402 /* ScanSimUniv.app */;
@@ -251,9 +254,6 @@
 			packageReferences = (
 				F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */,
 				F8C17A6728FECDB9009A9CDA /* XCRemoteSwiftPackageReference "CompactSlider" */,
-				F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */,
-				F889F4D32901723400DCE4F6 /* XCRemoteSwiftPackageReference "DebouncedOnChange" */,
-				F889F4D72906FB7A00DCE4F6 /* XCRemoteSwiftPackageReference "PDFViewer" */,
 			);
 			productRefGroup = F8DE523428FC93F30007B402 /* Products */;
 			projectDirPath = "";
@@ -318,7 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F802749E290AD40300F3C2F5 /* DefaultSettings.swift in Sources */,
 				F8DE526228FCA3BF0007B402 /* SettingsView.swift in Sources */,
+				F80274A0290AD4DF00F3C2F5 /* ImageManipulation.swift in Sources */,
 				F8C17A6628FECD91009A9CDA /* PreviewView.swift in Sources */,
 				F8DE523928FC93F30007B402 /* ContentView.swift in Sources */,
 				F8DE523728FC93F30007B402 /* ScanSimUnivApp.swift in Sources */,
@@ -494,12 +496,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUniv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,12 +537,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.whz.ScanSimUniv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -677,30 +683,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F889F4D32901723400DCE4F6 /* XCRemoteSwiftPackageReference "DebouncedOnChange" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Tunous/DebouncedOnChange.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		F889F4D72906FB7A00DCE4F6 /* XCRemoteSwiftPackageReference "PDFViewer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rajubd49/PDFViewer.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/markrenaud/FilePicker";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -720,11 +702,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F8B0244828FEFA440099199D /* FilePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F8B0244728FEFA440099199D /* XCRemoteSwiftPackageReference "FilePicker" */;
-			productName = FilePicker;
-		};
 		F8C17A6328FECC4C009A9CDA /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8C17A6228FECC4C009A9CDA /* XCRemoteSwiftPackageReference "Defaults" */;
