@@ -11,12 +11,14 @@ import SwiftUI
 
 struct PreviewView: View {
   @ObservedObject var controller: Scanner
+  @Binding var filePicker : Bool
+  
   var body: some View {
     if controller.outputPdf != nil {
       PDFKitRepresentedView(document: $controller.outputPdf)
       //Image(cpImage: controller.inputImages[0]!).resizable().aspectRatio(contentMode: .fit)
     } else {
-      NoDocumentView(controller: controller)
+      NoDocumentView(controller: controller, filePicker: $filePicker)
     }
   }
 }
@@ -54,9 +56,9 @@ struct PDFKitRepresentedView: CrossPlatform.ViewRepresentable {
 
 struct NoDocumentView: View {
   @ObservedObject var controller: Scanner
+  @Binding var filePicker: Bool
   @State private var isTargeted = false
   @State private var presentAlert = false
-  @State private var filePicker = false
 
   var body: some View {
     VStack {
@@ -76,12 +78,7 @@ struct NoDocumentView: View {
       Text("or drag and drop it here")
         .fontWeight(.light)
         .foregroundColor(isTargeted == true ? .blue : Color.gray)
-    }.fileImporter(isPresented: $filePicker, allowedContentTypes: [.pdf], allowsMultipleSelection: false, onCompletion: { (res) in
-      do {
-        let url = try res.get().first!
-        Task { try await controller.load(url: url) }
-      } catch { print("Error") }
-    })
+    }
     .frame(minWidth: 250, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
     .overlay(
       RoundedRectangle(cornerRadius: 16)

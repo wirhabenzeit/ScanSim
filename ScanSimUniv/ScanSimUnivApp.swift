@@ -12,10 +12,8 @@ import PDFKit
 import SwiftUI
 import UniformTypeIdentifiers
 
-extension UTType {
-  
-  static var scanSimPdf: UTType = UTType(exportedAs: "com.whz.pdf")
-  
+enum ScanSimError : Error {
+  case pdfImportError
 }
 
 enum CrossPlatform {
@@ -90,14 +88,22 @@ class Scanner: ObservableObject {
   }
   
   func load(url: URL) async throws {
-    inputPdf = PDFDocument(url: url)
-    outputPdf = PDFDocumentURL(data: inputPdf!.dataRepresentation()!)
-    pageCount = inputPdf?.pageCount
-    outputPdf?.filename = url.deletingPathExtension().lastPathComponent
-    print("PDF loaded")
-    await render()
-    print("PDF rendered")
-    try await scan()
+    if url.startAccessingSecurityScopedResource() {
+      guard let pdfDocument = PDFDocument(url: url),
+            let data = pdfDocument.dataRepresentation(),
+            let inputPdf = PDFDocument(data: data),
+            let outputPdf = PDFDocumentURL(data: data)
+      else { throw ScanSimError.pdfImportError }
+      url.stopAccessingSecurityScopedResource()
+      self.inputPdf = inputPdf
+      self.outputPdf = outputPdf
+      pageCount = inputPdf.pageCount
+      outputPdf.filename = url.deletingPathExtension().lastPathComponent
+      print("PDF loaded")
+      await render()
+      print("PDF rendered")
+      try await scan()
+    }   
   }
 
   func render() async {
